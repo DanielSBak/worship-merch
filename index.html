@@ -20,14 +20,25 @@
         }
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px; /* Зменшений padding для акуратності */
         }
+        
+        /* СТИЛІ ДЛЯ НОВОГО ЛОГОТИПУ */
+        header .header-logo {
+            max-width: 250px; /* Адаптивна ширина, не занадто велика */
+            height: auto;
+            margin: 0 auto 10px; /* Центрування та відступ знизу */
+            display: block; /* Важливо для центрирования */
+        }
+        
         header h1 {
-            font-size: 2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            display: none; /* Старий заголовок прихований CSS */
         }
-        header p { color: var(--accent); }
+        header p {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 0.9rem;
+        }
         
         .container {
             max-width: 1000px;
@@ -108,6 +119,7 @@
 <body>
 
 <header>
+    <img src="iam_logo.png" alt="I AM Worship Night Logo" class="header-logo">
     <h1>I AM | Worship Night</h1>
     <p>Exclusive Pre-order. Pick up on April 11th.</p>
 </header>
@@ -118,10 +130,10 @@
             <img src="IMG_3374.jpg" alt="I AM Heavyweight Shirt">
             <h3>"I AM" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
                 <input type="hidden" name="Item" value="I AM Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="shirt_iam">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -136,10 +148,10 @@
             <img src="IMG_3427.jpg" alt="Worthy is the Lamb Shirt">
             <h3>"Worthy" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
                 <input type="hidden" name="Item" value="Worthy Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="shirt_worthy">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -154,10 +166,10 @@
             <img src="IMG_3644.jpg" alt="I AM Sweater">
             <h3>"I AM" Sweater</h3>
             <p>$35.00</p>
-            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
                 <input type="hidden" name="Item" value="I AM Sweater">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="sweater">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -205,7 +217,6 @@
 </div>
 
 <script>
-    // ТУТ ТИ КОНТРОЛЮЄШ ЗАЛИШКИ (ніхто крім тебе цього не бачить)
     const inventory = {
         shirt_iam: { S: 5, M: 15, L: 15, XL: 5 },
         shirt_worthy: { S: 5, M: 15, L: 15, XL: 5 },
@@ -227,11 +238,9 @@
                 btn.style.backgroundColor = "#2b2b2b";
             }
         });
-        // Trigger check on load
         selector.dispatchEvent(new Event('change'));
     });
 
-    // Form submission handling to show modal instead of redirecting
     document.querySelectorAll('.order-form').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
