@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worship Night Merch | Pre-order</title>
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --text-color: #2b2b2b;
+            --accent: #8b8b8b;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        header p { color: var(--accent); }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: var(--text-color);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #000; }
+        
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item h4 { margin-bottom: 5px; }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close-btn {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>I AM | Worship Night</h1>
+    <p>Exclusive Pre-order. Pick up on April 11th.</p>
+</header>
+
+<div class="container">
+    <div class="merch-grid">
+        <div class="card">
+            <img src="IMG_3374.jpg" alt="I AM Heavyweight Shirt">
+            <h3>"I AM" Heavyweight Shirt</h3>
+            <p>$20.00</p>
+            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
+                <input type="hidden" name="Item" value="I AM Shirt">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <select name="Size" class="size-selector" data-item="shirt_iam">
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">X-Large</option>
+                </select>
+                <button type="submit" class="submit-btn">Reserve Now</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <img src="IMG_3427.jpg" alt="Worthy is the Lamb Shirt">
+            <h3>"Worthy" Heavyweight Shirt</h3>
+            <p>$20.00</p>
+            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
+                <input type="hidden" name="Item" value="Worthy Shirt">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <select name="Size" class="size-selector" data-item="shirt_worthy">
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">X-Large</option>
+                </select>
+                <button type="submit" class="submit-btn">Reserve Now</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <img src="IMG_3644.jpg" alt="I AM Sweater">
+            <h3>"I AM" Sweater</h3>
+            <p>$35.00</p>
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+                <input type="hidden" name="Item" value="I AM Sweater">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <select name="Size" class="size-selector" data-item="sweater">
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">X-Large</option>
+                </select>
+                <button type="submit" class="submit-btn">Reserve Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h3>❓ FREQUENTLY ASKED QUESTIONS</h3>
+        
+        <div class="faq-item">
+            <h4>1. Is this a full purchase or a reservation?</h4>
+            <p>This is a reservation, not a completed purchase. Payment will be made in person at pickup.</p>
+        </div>
+        <div class="faq-item">
+            <h4>2. How do I receive my item?</h4>
+            <p>Items will be picked up in person at our Worship Night:<br>
+            📍 13891 Asheville Hwy, Inman, SC<br>
+            🕕 6:00 PM</p>
+        </div>
+        <div class="faq-item">
+            <h4>3. What if my size or item runs out before Saturday?</h4>
+            <p>If we run out of your item before pickup, don’t worry — we will place an additional order based on your reservation. Your item will be fulfilled within 2–3 weeks.</p>
+        </div>
+        <div class="faq-item">
+            <h4>4. Can I pay online instead?</h4>
+            <p>At this time, all payments will be made in person at pickup.</p>
+        </div>
+        <p><em>Thank you for your support - we’re believing this is more than merch, but something God will use to reach people 🤍</em></p>
+    </div>
+</div>
+
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h2>Reservation Confirmed 🤍</h2>
+        <p>Thank you for reserving your item! We’re excited to have you be part of this project.</p>
+        <p>Your item will be held for you to pick up in person at our Worship Night on April 11th. Payment will be completed in person at pickup.</p>
+        <p>If demand exceeded our inventory, your item will be available within the following 2–3 weeks.</p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+    // ТУТ ТИ КОНТРОЛЮЄШ ЗАЛИШКИ (ніхто крім тебе цього не бачить)
+    // Я розділив футболки на два дизайни, припустивши, що в тебе по 5/15/15/5 на КОЖЕН дизайн.
+    // Якщо це загальна кількість на обидві футболки - просто поділи цифри.
+    const inventory = {
+        shirt_iam: { S: 5, M: 15, L: 15, XL: 5 },
+        shirt_worthy: { S: 5, M: 15, L: 15, XL: 5 },
+        sweater: { S: 5, M: 8, L: 8, XL: 5 }
+    };
+
+    document.querySelectorAll('.size-selector').forEach(selector => {
+        selector.addEventListener('change', function() {
+            const itemType = this.getAttribute('data-item');
+            const selectedSize = this.value;
+            const stock = inventory[itemType][selectedSize];
+            const btn = this.closest('form').querySelector('.submit-btn');
+
+            if (stock <= 0) {
+                btn.textContent = "Reserve for Restock";
+                btn.style.backgroundColor = "#8b8b8b";
+            } else {
+                btn.textContent = "Reserve Now";
+                btn.style.backgroundColor = "#2b2b2b";
+            }
+        });
+        // Trigger check on load
+        selector.dispatchEvent(new Event('change'));
+    });
+
+    // Form submission handling to show modal instead of redirecting
+    document.querySelectorAll('.order-form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successModal').style.display = 'flex';
+                    this.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                }
+            });
+        });
+    });
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+    }
+</script>
+</body>
+</html>
