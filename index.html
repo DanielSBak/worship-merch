@@ -118,10 +118,10 @@
             <img src="IMG_3374.jpg" alt="I AM Heavyweight Shirt">
             <h3>"I AM" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
                 <input type="hidden" name="Item" value="I AM Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="shirt_iam">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -136,10 +136,10 @@
             <img src="IMG_3427.jpg" alt="Worthy is the Lamb Shirt">
             <h3>"Worthy" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form" action="YOUR_FORMSPREE_LINK" method="POST">
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
                 <input type="hidden" name="Item" value="Worthy Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="shirt_worthy">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -157,7 +157,7 @@
             <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
                 <input type="hidden" name="Item" value="I AM Sweater">
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email or Instagram" required>
+                <input type="text" name="Email" placeholder="Email or Instagram" required>
                 <select name="Size" class="size-selector" data-item="sweater">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
@@ -206,8 +206,6 @@
 
 <script>
     // ТУТ ТИ КОНТРОЛЮЄШ ЗАЛИШКИ (ніхто крім тебе цього не бачить)
-    // Я розділив футболки на два дизайни, припустивши, що в тебе по 5/15/15/5 на КОЖЕН дизайн.
-    // Якщо це загальна кількість на обидві футболки - просто поділи цифри.
     const inventory = {
         shirt_iam: { S: 5, M: 15, L: 15, XL: 5 },
         shirt_worthy: { S: 5, M: 15, L: 15, XL: 5 },
