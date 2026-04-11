@@ -100,8 +100,6 @@
             background: rgba(0,0,0,0.5);
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
         }
         .modal-content {
             background: #fff;
@@ -109,7 +107,6 @@
             border-radius: 8px;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         .close-btn {
             background: transparent;
@@ -133,7 +130,8 @@
             <img src="IMG_3374.jpg" alt="I AM Heavyweight Shirt">
             <h3>"I AM" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form">
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+                <input type="hidden" name="Item" value="I AM Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
                 <input type="email" name="Email" placeholder="Email Address" required>
                 <select name="Size" class="size-selector" data-item="shirt_iam">
@@ -150,7 +148,8 @@
             <img src="IMG_3427.jpg" alt="Worthy is the Lamb Shirt">
             <h3>"Worthy" Heavyweight Shirt</h3>
             <p>$20.00</p>
-            <form class="order-form">
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+                <input type="hidden" name="Item" value="Worthy Shirt">
                 <input type="text" name="Name" placeholder="Full Name" required>
                 <input type="email" name="Email" placeholder="Email Address" required>
                 <select name="Size" class="size-selector" data-item="shirt_worthy">
@@ -167,7 +166,8 @@
             <img src="IMG_3644.jpg" alt="I AM Sweater">
             <h3>"I AM" Sweater</h3>
             <p>$35.00</p>
-            <form class="order-form">
+            <form class="order-form" action="https://formspree.io/f/meepdgoj" method="POST">
+                <input type="hidden" name="Item" value="I AM Sweater">
                 <input type="text" name="Name" placeholder="Full Name" required>
                 <input type="email" name="Email" placeholder="Email Address" required>
                 <select name="Size" class="size-selector" data-item="sweater">
@@ -206,22 +206,21 @@
     </div>
 </div>
 
-<div class="modal" id="soldOutModal">
+<div class="modal" id="successModal">
     <div class="modal-content">
-        <h2>Sold Out 🤍</h2>
-        <p>WOW. Thank you all! We were not expecting this, but our first drop has completely sold out.</p>
-        <p>Very soon, we will create a new form so you can pre-order the next batch of shirts.</p>
-        <p>However, you can still stop by the merch table <strong>after</strong> the Worship Night ends — there is a small chance we might have a few extra items available in your size!</p>
+        <h2>Reservation Confirmed 🤍</h2>
+        <p>Thank you for reserving your item! We’re excited to have you be part of this project.</p>
+        <p>Your item will be held for you to pick up in person at our Worship Night on April 11th. Payment will be completed in person at pickup.</p>
+        <p>If demand exceeded our inventory, your item will be available within the following 2–3 weeks.</p>
         <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
 </div>
 
 <script>
-    // Залишки обнулені
     const inventory = {
-        shirt_iam: { S: 0, M: 0, L: 0, XL: 0 },
-        shirt_worthy: { S: 0, M: 0, L: 0, XL: 0 },
-        sweater: { S: 0, M: 0, L: 0, XL: 0 }
+        shirt_iam: { S: 5, M: 15, L: 15, XL: 5 },
+        shirt_worthy: { S: 5, M: 15, L: 15, XL: 5 },
+        sweater: { S: 5, M: 8, L: 8, XL: 5 }
     };
 
     document.querySelectorAll('.size-selector').forEach(selector => {
@@ -242,16 +241,28 @@
         selector.dispatchEvent(new Event('change'));
     });
 
-    // Форма більше не відправляє дані, а просто показує повідомлення
     document.querySelectorAll('.order-form').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('soldOutModal').style.display = 'flex';
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successModal').style.display = 'flex';
+                    this.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                }
+            });
         });
     });
 
     function closeModal() {
-        document.getElementById('soldOutModal').style.display = 'none';
+        document.getElementById('successModal').style.display = 'none';
     }
 </script>
 </body>
